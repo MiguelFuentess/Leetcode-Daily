@@ -34,3 +34,14 @@ The alternating score is calculated as:
 
 score = (-3)2 - (-1)2 + (-2)2 - (1)2 + (3)2 - (2)2 = 9 - 1 + 4 - 1 + 9 - 4 = 16
 """
+
+class Solution(object):
+    def twoSum(self, nums, target):
+
+        pair_idx = {}
+
+        for i, num in enumerate(nums):
+            if target - num in pair_idx:
+                return [i, pair_idx[target - num]]
+            pair_idx[num] = i
+        
